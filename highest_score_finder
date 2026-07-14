@@ -1,0 +1,29 @@
+print("Welcome to finding your highest score from list!")
+name = input("what's your name? ")
+try:
+    ans= int(input("Would you like to use\n1. Our own setup list[90,70,50,50,40,34]\n2. You fill your own score list\nPlease enter 1 or 2 : "))
+except:
+    print("Error, please input the correct numeric",name)
+    quit()
+highest = 0
+if ans==1:
+    score = [90,70,50,40,34]
+    for item in score:
+        if item>highest:
+            highest=item
+elif ans==2:
+    score =[]
+    total_input = int(input("How many score do you want to enter : "))
+    while total_input!=0:
+        input_score  =int(input("Please input your score in 100 base percentile(1-100) : "))
+        if input_score>=0 and input_score<=100:
+            score.append(input_score)
+            total_input-=1
+        else:
+            print(f"Please input the correct score,{name}!")
+    for item in score:
+        if item>highest:
+            highest=item
+print("Your highest score is ",highest,",",name)
+print("Thankyou for using our program,",name)
+    
